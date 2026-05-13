@@ -1,0 +1,13 @@
+{
+  "_QPVersion": "0.1.0",
+  "name": "BeatLeader Friends Sniper",
+  "id": "com.yourname.beatleaderfriendssniper",
+  "version": "${version}",
+  "author": "yourname",
+  "description": "Shows your score and your BeatLeader friends scores with snipe popup on Quest (Beat Saber 1.40.8).",
+  "modFiles": [
+    "libBeatLeaderFriendsSniper.so"
+  ],
+  "libraryFiles": [],
+  "fileCopies": []
+}
