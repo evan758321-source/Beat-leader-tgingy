@@ -1,0 +1,16 @@
+{
+  "_QPVersion": "0.1.0",
+  "name": "beatleader-friends-sniper",
+  "id": "com.yourname.beatleaderfriendssniper",
+  "version": "0.1.0",
+  "author": "yourname",
+  "porter": "",
+  "packageId": "beatleader-friends-sniper",
+  "packageVersion": "0.1.0",
+  "description": "Quest standalone Beat Saber 1.40.8 mod that shows your and friends BeatLeader rankings with snipe popup.",
+  "dependencies": [
+    "qosmetics",
+    "paper",
+    "beatsaber-hook"
+  ]
+}
