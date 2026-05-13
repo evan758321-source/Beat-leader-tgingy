@@ -1,0 +1,42 @@
+name: Build Quest QMod
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up QPM
+        uses: fernthedev/qpm-action@v1
+        with:
+          workflow_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Restore dependencies
+        run: |
+          qpm restore
+
+      - name: Configure
+        run: |
+          cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: |
+          cmake --build build --config Release -j
+
+      - name: Package qmod
+        run: |
+          qpm qmod zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: beatleader-friends-sniper-qmod
+          path: ./*.qmod
